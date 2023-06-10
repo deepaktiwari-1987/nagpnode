@@ -8,14 +8,14 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
+      age: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
       name: {
         type: DataTypes.TEXT,
         allowNull: false,
         unique: false
-      },
-      dob: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
       },
       designation: {
         type: DataTypes.TEXT,
@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       },
       address: {
         type: DataTypes.TEXT,
+        allowNull: true
+      },
+      salary: {
+        type: DataTypes.REAL,
         allowNull: true
       }
     }, {
