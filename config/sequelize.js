@@ -2,16 +2,28 @@ const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
 
+console.log('in sequalize file')
+console.log(process.env);
 const config = {
-    db: {
-        username: 'postgres',
-        host: '10.127.130.243',
-        database: 'rb_home_db',
-        password: 'postgres',
+    /*db: {
+        username: 'nagp',
+        host: 'postgresdb-service',
+        database: 'nagp',
+        password: 'nagp',
         port: 5432,
         dialect: "postgres",
         enableSequelizeLog: true,
-        schema: 'rb_home_finance'
+        //schema: 'rb_home_finance'
+    },*/
+    db: {
+        username: process.env.POSTGRES_USER,
+        host: process.env.POSTGRES_HOST,
+        database: process.env.POSTGRES_DB,
+        password: process.env.POSTGRES_PASSWORD,
+        port: process.env.POSTGRES_PORT,
+        dialect: "postgres",
+        enableSequelizeLog: true,
+        //schema: 'rb_home_finance'
     },
 }
 
